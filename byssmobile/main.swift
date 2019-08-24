@@ -28,6 +28,7 @@ class CheckListElement: CheckListElementDelegate{
         return (element.dayOfTheWeek, element.task, element.taskStatus);
     }
     
+    // status 0 - Do wykonania, status 1 - Gotowe
     func changeTaskStatus(element: CheckListElement,changeStatus: Int) -> CheckListElement {
         var statusLibrary = [": Do wykonania", ": Gotowe"]
         element.taskStatus = statusLibrary[changeStatus]
@@ -77,10 +78,10 @@ class CheckList: ShowAllElememts{
 
 
 let element0 = CheckListElement(dayOfTheWeek: "Poniedziałek ", task: "Posprzątać", taskStatus: ": Do wykonania")
-let element1 = CheckListElement(dayOfTheWeek: "Wtorek ", task: "Posprzątać", taskStatus: " Gotowe")
-let element2 = CheckListElement(dayOfTheWeek: "Środa ", task: "Posprzątać", taskStatus: " Gotowe")
-let element3 = CheckListElement(dayOfTheWeek: "Czwartek ", task: "Posprzątać", taskStatus: " Gotowe")
-let element4 = CheckListElement(dayOfTheWeek: "Piątek ", task: "Party", taskStatus: " Gotowe")
+let element1 = CheckListElement(dayOfTheWeek: "Wtorek ", task: "Ugotować", taskStatus: " Gotowe")
+let element2 = CheckListElement(dayOfTheWeek: "Środa ", task: "Umyć samochód", taskStatus: " Gotowe")
+let element3 = CheckListElement(dayOfTheWeek: "Czwartek ", task: "Pobiegać", taskStatus: " Gotowe")
+let element4 = CheckListElement(dayOfTheWeek: "Piątek ", task: "Przeczytać książkę", taskStatus: " Gotowe")
 let element5 = CheckListElement(dayOfTheWeek: "Sobota ", task: "Party", taskStatus: " Do wykonania")
 let element6 = CheckListElement(dayOfTheWeek: "Niedziela ", task: "Party", taskStatus: " Gotowe")
 
@@ -97,8 +98,14 @@ checkList.table.append(element6)
 
 print(checkList.table)
 print(checkList.getEveryThirdElement(table: checkList.table))
-    
-    print(checkList.table[3])
-    print(element2)
-    element2.changeTaskStatus(element: element2, changeStatus: 0)
-    print(element2)
+
+
+checkList.showAllElements(Array: checkList.table)
+print(checkList.table[3])
+
+print(element2)
+// status 0 - Do wykonania, status 1 - Gotowe
+element2.changeTaskStatus(element: element2, changeStatus: 0)
+print(element2)
+
+checkList.showAllElements(Array: checkList.table)
