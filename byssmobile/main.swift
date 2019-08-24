@@ -6,11 +6,9 @@
 
 import Foundation
 
-
 protocol CheckListElementDelegate{
     func changeTaskStatus(element: CheckListElement, changeStatus: Int)->(CheckListElement)
 }
-
 
 class CheckListElement: CheckListElementDelegate{
     
