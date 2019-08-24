@@ -2,8 +2,6 @@
 //  main.swift
 //  byssmobile
 //
-//  Created by Sebastian Palewski on 23/08/2019.
-//  Copyright © 2019 Sebastian Palewski. All rights reserved.
 //
 
 import Foundation
@@ -106,4 +104,3 @@ print(checkList.getEveryThirdElement(table: checkList.table))
     print(element2)
     element2.changeTaskStatus(element: element2, changeStatus: 0)
     print(element2)
-    print(element2.description)
