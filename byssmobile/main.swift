@@ -63,7 +63,7 @@ class CheckList: ShowAllElememts{
         self.table=tablica
     }
     
-    
+    // pokazuje co trzeci element
     func getEveryThirdElement(table: Array<CheckListElement>) -> Array<CheckListElement> {
         var tableFiltred = Array <CheckListElement>()
         for i in stride(from: 0, to: table.count, by: 2) {
@@ -96,7 +96,9 @@ checkList.table.append(element4)
 checkList.table.append(element5)
 checkList.table.append(element6)
 
+//wydruk całej listy
 print(checkList.table)
+//wydruk co trzeciego elementu
 print(checkList.getEveryThirdElement(table: checkList.table))
 
 
@@ -107,5 +109,3 @@ print(element2)
 // status 0 - Do wykonania, status 1 - Gotowe
 element2.changeTaskStatus(element: element2, changeStatus: 0)
 print(element2)
-
-checkList.showAllElements(Array: checkList.table)
